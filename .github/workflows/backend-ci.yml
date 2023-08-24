@@ -28,7 +28,7 @@ jobs:
             submodule: true
       - name: Update submodule
         run: |
-          git submodule update --init backend/BackendConfig/
+          git submodule update --init backend/backend_config
       - name: Set up JDK 17
         uses: actions/setup-java@v3
         with:
