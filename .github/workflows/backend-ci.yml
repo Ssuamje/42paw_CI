@@ -65,3 +65,12 @@ jobs:
             cd ../ && mkdir -p deploy
             mv before-deploy/before-deploy.zip deploy/deploy.zip
             aws s3 cp deploy/deploy.zip s3://${{ secrets.DEV_S3_BUCKET_NAME }}/deploy.zip
+
+            aws deploy create-deployment \
+            --application-name paw-prod-deploy \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --deployment-group-name paw \
+            --description "Deploying from GitHub Actions" \
+            --file-exists-behavior OVERWRITE \
+            --s3-location bucket=${{ secrets.DEV_S3_BUCKET_NAME }},bundleType=zip,key=deploy.zip
+      
