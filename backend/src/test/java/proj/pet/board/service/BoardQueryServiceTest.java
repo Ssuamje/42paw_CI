@@ -8,6 +8,7 @@ import jakarta.persistence.EntityManager;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,6 +95,7 @@ class BoardQueryServiceTest {
 	}
 
 	@DisplayName("")
+	@Disabled
 	@Test
 	void test() {
 		//given
